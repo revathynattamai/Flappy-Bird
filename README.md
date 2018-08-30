@@ -1,4 +1,4 @@
 # BoilerPlateDev
-Basic package requirement to build react application
-Webpack requirement for Dev server
-babelrc configuration
+Basic package requirement to build react application.<br>
+Webpack requirement for Dev server.<br>
+babelrc configuration.
