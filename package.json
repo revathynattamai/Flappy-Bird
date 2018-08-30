@@ -1,0 +1,19 @@
+{
+  "name": "search_mind",
+  "version": "1.0.0",
+  "description": "Interview question from MindTree",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "search"
+  ],
+  "author": "Revathy Nattamai Gopinath",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack-dev-server": "^3.1.7"
+  }
+}
