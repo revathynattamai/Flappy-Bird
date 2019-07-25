@@ -1,14 +1,14 @@
 {
-  "name": "search_mind",
+  "name": "flappybird",
   "version": "1.0.0",
-  "description": "Interview question from MindTree",
+  "description": "Flappy Bird",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.js --hot --inline",
+    "dev": "webpack --config webpack.config.js --hot --inline",
     "test": "npm run test"
   },
   "keywords": [
-    "search"
+    "Flappy bird"
   ],
   "author": "Revathy Nattamai Gopinath",
   "license": "ISC",
@@ -20,12 +20,13 @@
     "webpack-dev-server": "^3.1.7"
   },
   "devDependencies": {
-    "webpack-cli": "^3.1.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "less-loader": "^5.0.0",
+    "webpack-cli": "^3.1.0"
   }
 }

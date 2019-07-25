@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ce6b3c0aef620f99277e";
+/******/ 	var hotCurrentHash = "eac8324aaefdbb13e71c";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -20695,6 +20695,112 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./src/App/app.js":
+/*!************************!*\
+  !*** ./src/App/app.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+__webpack_require__(/*! ./style.less */ "./src/App/style.less");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_Component) {
+  _inherits(App, _Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+    _this.state = {
+      stage: 9,
+      cleared: false
+    };
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: 'dieBird',
+    value: function dieBird() {
+      var elem = document.getElementById('die');
+      elem.parentNode.removeChild(elem);
+      this.setState(function (prevState) {
+        return {
+          stage: ++prevState.stage,
+          cleared: !prevState.cleared
+        };
+      });
+    }
+  }, {
+    key: 'enableButton',
+    value: function enableButton() {
+      if (this.state.stage == document.getElementById('stage').value) {
+        document.getElementById('stage').disabled = true;
+      } else {
+        document.getElementById('stage').disabled = false;
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'main' },
+        _react2.default.createElement(
+          'div',
+          { className: 'sparrow' },
+          _react2.default.createElement('button', { id: 'die', onClick: this.dieBird.bind(this) })
+        ),
+        _react2.default.createElement(
+          'button',
+          { disabled: !this.state.cleared },
+          'Next'
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(_react.Component);
+
+exports.default = App;
+
+/***/ }),
+
+/***/ "./src/App/style.less":
+/*!****************************!*\
+  !*** ./src/App/style.less ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/less-loader/dist/cjs.js):\nError: Cannot find module 'less'\n    at Function.Module._resolveFilename (module.js:547:15)\n    at Function.Module._load (module.js:474:25)\n    at Module.require (module.js:596:17)\n    at require (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)\n    at Object.<anonymous> (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/less-loader/dist/index.js:8:36)\n    at Module._compile (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/v8-compile-cache/v8-compile-cache.js:178:30)\n    at Object.Module._extensions..js (module.js:663:10)\n    at Module.load (module.js:565:32)\n    at tryModuleLoad (module.js:505:12)\n    at Function.Module._load (module.js:497:3)\n    at Module.require (module.js:596:17)\n    at require (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)\n    at Object.<anonymous> (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/less-loader/dist/cjs.js:3:18)\n    at Module._compile (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/v8-compile-cache/v8-compile-cache.js:178:30)\n    at Object.Module._extensions..js (module.js:663:10)\n    at Module.load (module.js:565:32)\n    at tryModuleLoad (module.js:505:12)\n    at Function.Module._load (module.js:497:3)\n    at Module.require (module.js:596:17)\n    at require (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)\n    at loadLoader (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/webpack/lib/NormalModule.js:265:3)\n    at NormalModule.build (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/webpack/lib/NormalModule.js:412:15)\n    at Compilation.buildModule (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/webpack/lib/Compilation.js:616:10)\n    at factory.create (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/webpack/lib/Compilation.js:857:14)\n    at factory (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/webpack/lib/NormalModuleFactory.js:405:6)\n    at hooks.afterResolve.callAsync (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/webpack/lib/NormalModuleFactory.js:155:13)\n    at AsyncSeriesWaterfallHook.eval [as callAsync] (eval at create (/Users/revathy/Documents/Learning/BoilerPlateDev/node_modules/tapable/lib/HookCodeFactory.js:24:12), <anonymous>:6:1)");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -20711,13 +20817,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
+var _app = __webpack_require__(/*! ./App/app */ "./src/App/app.js");
+
+var _app2 = _interopRequireDefault(_app);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-ReactDOM.render(_react2.default.createElement(
-    'h1',
-    null,
-    'Hello, world!'
-), document.getElementById('root'));
+(0, _reactDom.render)(_react2.default.createElement(_app2.default, null), document.getElementById('root'));
 
 /***/ })
 

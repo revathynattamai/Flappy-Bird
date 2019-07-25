@@ -1,0 +1,23 @@
+.sparrow {
+  height:600px;
+}
+
+#die {
+position: relative;
+animation: animated_div 5s 3;
+background-color: black;
+width: 100px;
+height: 100px;
+outline: none;
+}
+
+@keyframes animated_div {
+  0%   {background-color:red; left:0px; top:0px;}
+  15%  {background-color:orange; left:206px; top:600px;}
+  25%  {background-color:yellow; left:406px; top:0px;}
+  50%  {background-color:blue; left:406px; top:406px}
+  65%  {background-color:orange; left:206px; top:200px;}
+  75%  {background-color:green; left:0px; top:406px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
