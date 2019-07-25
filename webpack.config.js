@@ -29,7 +29,18 @@ module.exports = {
           },
           {
             test: /\.less$/,
-            loader: 'less-loader',
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+              },
+              {
+                loader: 'less-loader',
+              },
+            ],
           },
         ],
       },

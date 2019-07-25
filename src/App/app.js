@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import './style.less';
+import styles from './style.less';
 
 class App extends Component {
   constructor() {

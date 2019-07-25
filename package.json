@@ -4,7 +4,7 @@
   "description": "Flappy Bird",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack --config webpack.config.js --hot --inline",
+    "dev": "webpack-dev-server --config webpack.config.js --hot --inline",
     "test": "npm run test"
   },
   "keywords": [
@@ -26,7 +26,10 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.1.0",
+    "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "style-loader": "^0.23.1",
     "webpack-cli": "^3.1.0"
   }
 }
