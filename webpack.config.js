@@ -2,55 +2,64 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    mode: "development",
-    entry: "./src/index.js",
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js",
-    },
-    devServer: {
-        contentBase: path.join(__dirname, '../dist'),
-        compress: true,
-        host: 'localhost',
-        port: 5000,
-        hot: true,
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  devServer: {
+    contentBase: path.join(__dirname, '../dist'),
+    compress: true,
+    host: 'localhost',
+    port: 5000,
+    hot: true,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
-      resolve: {
-        extensions: ['.js', '.jsx']
-      },
-      module: {
-        rules: [
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        use: [
           {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-            },
+            loader: 'style-loader',
           },
           {
-            test: /\.less$/,
-            exclude: /node_modules/,
-            use: [
-              {
-                loader: 'style-loader',
-              },
-              {
-                loader: 'css-loader',
-              },
-              {
-                loader: 'less-loader',
-              },
-            ],
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
+    ],
+  },
 
-    devtool: "source-map",
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: 'Flappy bird',
-        template: path.resolve(__dirname, 'index.html'),
-        excludeChunks: ['polyfills'],
-      }),
-    ]
+  devtool: "source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Splash',
+      template: path.resolve(__dirname, 'index.html'),
+      excludeChunks: ['polyfills'],
+    }),
+  ]
 }

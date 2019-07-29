@@ -1,23 +1,56 @@
-.sparrow {
-  height:600px;
+body {
+	background: #00b4ff;
+	color: #333;
+	font: 100% Lato, Arial, Sans Serif;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
 }
-
-#die {
-position: relative;
-animation: animated_div 5s 3;
-background-color: black;
-width: 100px;
+.main {
+  bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.next {
 height: 100px;
-outline: none;
+width: 100%;
+font-size: 37px;
+border: solid 2px black;
+color: blue;
+top: 50%;
+position: absolute;
 }
 
-@keyframes animated_div {
-  0%   {background-color:red; left:0px; top:0px;}
-  15%  {background-color:orange; left:206px; top:600px;}
-  25%  {background-color:yellow; left:406px; top:0px;}
-  50%  {background-color:blue; left:406px; top:406px}
-  65%  {background-color:orange; left:206px; top:200px;}
-  75%  {background-color:green; left:0px; top:406px;}
-  100% {background-color:red; left:0px; top:0px;}
+
+@keyframes animateBubble {
+  0% {
+      margin-top: 1000px;
+  }
+  100% {
+      margin-top: -100%;
+  }
+}
+
+
+@keyframes sideWays {
+  0% {
+      margin-left:800px;
+  }
+  100% {
+      margin-left:50px;
+  }
+}
+
+
+#bubble {
+border-radius: 50%;
+box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+height: 200px;
+position: absolute;
+width: 200px;
+transform: scale(0.6);
 }
 

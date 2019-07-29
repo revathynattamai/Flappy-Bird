@@ -6,33 +6,30 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      stage: 9,
-      cleared: false,
+      count: 0
     }
   }
 
   dieBird() {
-    let elem = document.getElementById('die');
+    let elem = document.getElementById('bubble');
     elem.parentNode.removeChild(elem);
-    this.setState(prevState => ({
-      stage: ++prevState.stage,
-      cleared: !prevState.cleared
-    }));
+    this.setState({ count: ++this.state.count });
   }
 
-  enableButton() {
-    if (this.state.stage == document.getElementById('stage').value) { document.getElementById('stage').disabled = true; } else {
-      document.getElementById('stage').disabled = false;
+
+  bubbles() {
+    let arr = [];
+    for (let i = 100; i >= 5; i = i - 10) {
+        arr.push(<div style={{ animation: `animateBubble ${i}s linear infinite, sideWays 5s ease-in-out infinite alternate`}} id='bubble' onClick={this.dieBird.bind(this)} />)
     }
+    return arr;
   }
 
   render() {
     return (
       <div className='main'>
-        <div className='sparrow'>
-          <button id='die' onClick={this.dieBird.bind(this)} />
-        </div>
-        <button disabled={!this.state.cleared}>Next</button>
+        {this.bubbles()}
+        <span style={{ color: 'black', fontSize: 50 }}>{this.state.count}</span>
       </div>
     );
   }
